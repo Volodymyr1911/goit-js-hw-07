@@ -26,6 +26,7 @@ const images = [
 ];
 
 const galleryList = document.querySelector(".gallery");
+const fragment = document.createDocumentFragment();
 
 images.forEach((image) => {
   const listItem = document.createElement("li");
@@ -35,21 +36,21 @@ images.forEach((image) => {
 
   imageElement.src = image.url;
   imageElement.alt = image.alt;
-  imageElement.style.maxWidth = "100%";
-  imageElement.style.height = "auto";
+  imageElement.style.maxWidth = "360px";
+  imageElement.style.height = "300px";
 
   listItem.appendChild(imageElement);
-  galleryList.appendChild(listItem);
+  fragment.appendChild(listItem);
 });
+
+galleryList.appendChild(fragment);
 
 galleryList.style.display = "flex";
+galleryList.style.flexDirection = "row";
+galleryList.style.flexWrap = "wrap";
+galleryList.style.gap = "48px 24px";
 galleryList.style.listStyleType = "none";
 galleryList.style.padding = "0";
-
-const galleryItems = document.querySelectorAll(".gallery-item");
-galleryItems.forEach((item) => {
-  item.style.marginRight = "10px";
-});
 
 const lastItem = galleryItems[galleryItems.length - 1];
 lastItem.style.marginRight = "0";

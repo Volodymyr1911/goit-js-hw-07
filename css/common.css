@@ -12,3 +12,9 @@ body {
   color: #212121;
   line-height: 1.5;
 }
+
+.section-image {
+  padding: 100px 156px;
+  width: 1440px;
+  height: 848px;
+}

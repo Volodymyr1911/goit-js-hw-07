@@ -59,15 +59,18 @@ function createBoxes() {
 
   destroyBoxes();
 
+  const fragment = document.createDocumentFragment();
+
   for (let i = 0; i < amount; i += 1) {
     const div = document.createElement("div");
     const size = 30 + i * 10;
     div.style.width = `${size}px`;
     div.style.height = `${size}px`;
     div.style.backgroundColor = getRandomHexColor();
-    boxesContainerRef.appendChild(div);
+    fragment.appendChild(div);
   }
 
+  boxesContainerRef.appendChild(fragment);
   inputRef.value = "";
 }
 
